@@ -27,7 +27,7 @@ class pacientes_de_clinca:
     def _validar_dni(self, dni: str):
         
         if not dni or not dni.strip():
-            raise DatosInvalidosException("El DNI no puede estar vacío")
+            raise DatosInvalidosException("El DNI no puede estar vacío sino no naciste todavia")
         
         dni_limpio = dni.strip()
         if not (dni_limpio.isdigit() and 7 <= len(dni_limpio) <= 8):
