@@ -8,7 +8,7 @@ from src.models.especialidad import Especialidad
 
 class TestTurno(unittest.TestCase):
     def setUp(self):
-        self.paciente = pacientes ("Juan Pérez", "12345678", "19/06/2000")
+        self.paciente = pacientes ("Domingo Hernandez", "64358279", "19/06/2000")
         self.medico = Medico("Dr. Carlos Gómez", "489")
         self.medico.agregar_especialidad(Especialidad("Pediatría", ["miercoles"]))
         

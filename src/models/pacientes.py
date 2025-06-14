@@ -22,7 +22,7 @@ class pacientes_de_clinca:
         
         nombre_solo_letras = nombre.replace(' ', '').replace('.', '')
         if not nombre_solo_letras.isalpha():
-            raise DatosInvalidosException("El nombre solo puede contener letras, espacios y puntos")
+            raise DatosInvalidosException("El nombre solo pone tu nombre y apellido, sin caracteres especiales")
 
     def _validar_dni(self, dni: str):
         
@@ -31,17 +31,17 @@ class pacientes_de_clinca:
         
         dni_limpio = dni.strip()
         if not (dni_limpio.isdigit() and 7 <= len(dni_limpio) <= 8):
-            raise DatosInvalidosException("El DNI debe tener entre 7 y 8 dígitos")
+            raise DatosInvalidosException("El DNI debe teniene 8 digitos pone esos nada mas")
 
     def _validar_fecha_nacimiento(self, fecha: str):
        
         if not fecha or not fecha.strip():
-            raise DatosInvalidosException("La fecha de nacimiento no puede estar vacía")
+            raise DatosInvalidosException("La fecha de nacimiento no puede estar vacía ")
         
         try:
             datetime.strptime(fecha, "%d/%m/%Y")
         except ValueError:
-            raise DatosInvalidosException("La fecha debe estar en + dd/mm/aaaa y ser válida")
+            raise DatosInvalidosException("La fecha debe estar en dd/mm/aaaa y ser una que exista")
 
     def obtener_dni(self) -> str:
         return self.__dni
