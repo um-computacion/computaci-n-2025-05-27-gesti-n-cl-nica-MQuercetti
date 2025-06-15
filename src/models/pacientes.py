@@ -1,8 +1,8 @@
 import re
 from datetime import datetime
-from NotFound import DatosInvalidosException
+from .NotFound import DatosInvalidosException
 
-class pacientes_de_clinca:
+class Pacientes_de_Clinica:
     def __init__(self, nombre: str, dni: str, fecha_nacimiento: str):
         self._validar_nombre(nombre)
         self._validar_dni(dni)
@@ -15,7 +15,7 @@ class pacientes_de_clinca:
     def _validar_nombre(self, nombre: str):
         
         if not nombre or not nombre.strip():
-            raise DatosInvalidosException("El nombre esta vacío llenalo")
+            raise DatosInvalidosException("El nombre esta vacío, llenalo")
 
         if any(char.isdigit() for char in nombre):
             raise DatosInvalidosException("El nombre no permite números")
