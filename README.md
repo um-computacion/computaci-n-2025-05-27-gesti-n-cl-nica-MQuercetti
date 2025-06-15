@@ -1,11 +1,12 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/y_fEcNZn)
 # 🏥 Sistema de Gestión para una Clínica
 
 ## 👤 Información del Alumno
 
 ### 📋 Datos Personales
-- **Nombre y Apellido**: [Completar con nombre y apellido]
+- **Nombre y Apellido**: [Quercetti Ignacio]
 - **Ciclo Lectivo**: 2025
-- **Carrera**: [Completar con nombre de la carrera]
+- **Carrera**: [Ingenieria en informatica]
 
 ## ⏰ Información Importante sobre la Entrega
 
@@ -34,6 +35,49 @@ En virtud de los estándares académicos establecidos y la importancia de manten
 - Asegúrese de comprender todos los requisitos y especificaciones técnicas.
 - Consulte cualquier duda con los docentes durante la clase de la semana próxima.
 - La implementación debe cumplir con todos los puntos especificados en la consigna.
+
+### Cómo ejecutar el sistema
+
+# Ejecutar la aplicación
+python main.py
+
+# Ejecutar todas las pruebas
+python -m unittest discover tests -v
+
+
+### Estructura principal
+
+- Modelos (models): Incluye las clases principales (Paciente, Medico, Turno, Receta, Clinica) y sus validaciones.
+
+- Interfaz por consola (src/cli.py): Gestiona la interacción con el usuario.
+
+- Excepciones personalizadas (src/exceptions.py): Define errores específicos para distintos casos.
+
+- Pruebas (tests/): Contiene los tests automáticos para verificar el funcionamiento.
+
+### Funcionamiento general
+
+- Registro: Se pueden registrar pacientes y médicos, validando datos como nombre, DNI y matrícula.
+
+- Especialidades: Los médicos pueden tener varias especialidades y días de atención.
+
+- Turnos: Se agendan turnos verificando disponibilidad y evitando duplicados.
+
+- Recetas: Los médicos pueden emitir recetas para los pacientes.
+
+- Historia clínica: Cada paciente tiene una historia clínica que se actualiza automáticamente con turnos y recetas.
+
+### Características técnicas
+
+- Validaciones centralizadas en los modelos para asegurar la integridad de los datos.
+
+- Excepciones personalizadas para distintos tipos de errores (datos inválidos, duplicados, etc.).
+
+- Búsquedas eficientes usando diccionarios por DNI o matrícula.
+Copia de listas para evitar modificar datos internos accidentalmente.
+
+-Automatización de la historia clínica al registrar pacientes y eventos.
+
 
 ---
 
