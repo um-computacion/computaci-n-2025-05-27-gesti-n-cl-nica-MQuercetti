@@ -36,6 +36,49 @@ En virtud de los estándares académicos establecidos y la importancia de manten
 - Consulte cualquier duda con los docentes durante la clase de la semana próxima.
 - La implementación debe cumplir con todos los puntos especificados en la consigna.
 
+### Cómo ejecutar el sistema
+
+# Ejecutar la aplicación
+python main.py
+
+# Ejecutar todas las pruebas
+python -m unittest discover tests -v
+
+
+### Estructura principal
+
+- Modelos (models): Incluye las clases principales (Paciente, Medico, Turno, Receta, Clinica) y sus validaciones.
+
+- Interfaz por consola (src/cli.py): Gestiona la interacción con el usuario.
+
+- Excepciones personalizadas (src/exceptions.py): Define errores específicos para distintos casos.
+
+- Pruebas (tests/): Contiene los tests automáticos para verificar el funcionamiento.
+
+### Funcionamiento general
+
+- Registro: Se pueden registrar pacientes y médicos, validando datos como nombre, DNI y matrícula.
+
+- Especialidades: Los médicos pueden tener varias especialidades y días de atención.
+
+- Turnos: Se agendan turnos verificando disponibilidad y evitando duplicados.
+
+- Recetas: Los médicos pueden emitir recetas para los pacientes.
+
+- Historia clínica: Cada paciente tiene una historia clínica que se actualiza automáticamente con turnos y recetas.
+
+### Características técnicas
+
+- Validaciones centralizadas en los modelos para asegurar la integridad de los datos.
+
+- Excepciones personalizadas para distintos tipos de errores (datos inválidos, duplicados, etc.).
+
+- Búsquedas eficientes usando diccionarios por DNI o matrícula.
+Copia de listas para evitar modificar datos internos accidentalmente.
+
+-Automatización de la historia clínica al registrar pacientes y eventos.
+
+
 ---
 
 ## 📝 Consigna 
