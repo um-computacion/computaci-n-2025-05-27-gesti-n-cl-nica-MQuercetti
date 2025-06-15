@@ -34,7 +34,7 @@ class Medico:
         
         matricula_limpia = matricula.strip()
         if not (matricula_limpia.isdigit() and 4 <= len(matricula_limpia) <= 10):
-            raise DatosInvalidosException("La matrícula debe tener entre 4 y 10 dígitos")
+            raise DatosInvalidosException ("La matrícula debe tener entre 4 y 10 dígitos")
 
     def agregar_especialidad(self, especialidad: Especialidad):
 

@@ -1,5 +1,5 @@
 from datetime import datetime
-from NotFound import DatosInvalidosException
+from .NotFound import DatosInvalidosException
 
 
 class Turno:
@@ -12,7 +12,6 @@ class Turno:
         self.__especialidad = especialidad.strip()
 
     def _validar_parametros(self, paciente, medico, fecha_hora, especialidad):
-        """Valida que todos los parámetros sean válidos."""
         if paciente is None:
             raise DatosInvalidosException("El paciente no puede ser None")
         
@@ -42,4 +41,23 @@ class Turno:
 
     def __str__(self) -> str:
         fecha_str = self.__fecha_hora.strftime("%d/%m/%Y %H:%M")
-        return f"Turno: {self.__paciente.obtener_nombre()}, Dr. {self.__medico.obtener_nombre()}, {self.__especialidad}, {fecha_str}"
+        nombre_medico = self.__medico.obtener_nombre()
+        for prefijo in ("Dr. ", "Dra. "):
+            if nombre_medico.startswith(prefijo):
+                nombre_medico = nombre_medico[len(prefijo):]
+        nombre_medico = "Dr. " + nombre_medico
+        return f"Turno: {self.__paciente.obtener_nombre()}, {nombre_medico}, {self.__especialidad}, {fecha_str}"
+
+    def __repr__(self) -> str:
+        return (f"Turno({self.__paciente.obtener_nombre()}, "
+                f"{self.__medico.obtener_nombre()}, "
+                f"{self.__fecha_hora.strftime('%d/%m/%Y %H:%M')}, "
+                f"{self.__especialidad})")
+
+    def __eq__(self, other):
+        if not isinstance(other, Turno):
+            return False
+        return (self.__paciente == other.__paciente and
+                self.__medico == other.__medico and
+                self.__fecha_hora == other.__fecha_hora and
+                self.__especialidad == other.__especialidad)

@@ -10,7 +10,7 @@ class TestMedico(unittest.TestCase):
 
     def test_agregar_especialidad(self):
         self.medico.agregar_especialidad(self.especialidad1)
-        self.assertEqual(self.medico.obtener_especialidad_para_dia("miercoles"), "Pediatría")
+        self.assertEqual(self.medico.obtener_especialidad_para_dia("miércoles"), "Pediatría")
         self.medico.agregar_especialidad(self.especialidad2)
         self.assertEqual(self.medico.obtener_especialidad_para_dia("viernes"), "Podologia")
 
